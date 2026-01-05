@@ -1,15 +1,17 @@
-# marketing-spend-analysis
-## Overview
-This project analyzes multi-channel marketing spend data to understand budget allocation patterns and ensure data consistency between reported total investment and channel-level spend.
+# Marketing Spend Analysis
 
-The analysis focuses on validating data quality, identifying discrepancies, and generating actionable insights into marketing strategy and channel effectiveness.
+## Overview
+This project analyzes multi-channel marketing spend data to understand how marketing budgets are allocated across different channels and to ensure consistency between reported total investment and channel-level spend.
+
+The analysis emphasizes data validation, reconciliation, and structured comparison of budget allocation to generate actionable insights into marketing strategy and channel prioritization.
 
 ---
 
-## Business Question
-- How is marketing budget allocated across different channels?
+## Business Questions
+- How is marketing budget distributed across different channels?
 - Is the reported total investment consistent with the sum of channel-level spend?
-- What do discrepancies reveal about data quality and budget reporting?
+- What do discrepancies reveal about data quality and budget reporting practices?
+- What does the budget allocation suggest about the company’s marketing strategy?
 
 ---
 
@@ -17,28 +19,57 @@ The analysis focuses on validating data quality, identifying discrepancies, and 
 - Dataset: Marketing Spend Dataset (Kaggle)
 - Time period: 2015–2016
 - Granularity: Monthly marketing investment by channel
+- Channels include: TV, Digital, Sponsorship, Content Marketing, Online Marketing, Affiliates, SEM, Radio, and Others
 
 ---
 
 ## Data Validation & Quality Checks
-Before conducting analysis, the dataset was validated by reconciling total investment against the sum of channel-level spend for each month.
+Before conducting any analysis, the dataset was validated to ensure consistency between reported total investment and channel-level spend.
 
-### Validation Steps:
-- Calculated channel-level spend sum per month
-- Compared channel sum with reported total investment
-- Classified discrepancies into:
-  - **Rounding difference** (minor numerical differences due to rounding)
-  - **Unallocated value** (potential missing or undistributed budget)
+### Validation Process
+- Calculated the sum of channel-level spend for each month
+- Compared channel-level sums with reported total investment
+- Identified and classified discrepancies using tolerance-based logic
 
-### Key Findings:
-- Most discrepancies were attributable to rounding differences
-- Only a small number of months showed evidence of unallocated marketing spend
+### Discrepancy Classification
+- **Rounding Difference**: Minor numerical differences caused by rounding or floating-point precision
+- **Unallocated Value**: Larger differences potentially caused by missing or undistributed budget categories
 
-To ensure analytical accuracy, subsequent analysis focuses on months where discrepancies are caused by rounding differences.
+### Key Findings from Validation
+- The majority of monthly records showed only rounding-related discrepancies
+- A small number of months exhibited evidence of unallocated marketing spend
+
+To ensure analytical accuracy, subsequent analysis focuses only on months where discrepancies were attributable to rounding differences.
 
 ---
 
 ## Analysis Scope
-- Channel-level budget allocation
-- Relative contribution of each marketing channel
-- Identification of dominant channels and spending patterns
+- Channel-level marketing budget allocation
+- Relative contribution of each channel to total marketing spend
+- Comparison between brand-focused and performance-driven marketing channels
+
+Months with unallocated budget values were excluded from downstream analysis to avoid distorted conclusions.
+
+---
+
+## Budget Allocation Comparison
+Using the validated dataset, channel-level spend was aggregated to compare how marketing resources were distributed across different channels.
+
+This comparison provides insight into overall marketing priorities, highlighting the balance between long-term brand-building initiatives and performance-oriented acquisition strategies.
+
+---
+
+## Visualization
+
+### Channel Budget Allocation
+The chart below illustrates the distribution of total marketing spend across channels after data validation.
+
+![Channel Budget Share](visuals/channel_budget_share.png)
+
+---
+
+## Key Insights
+- Sponsorship represents the largest share of total marketing spend, indicating a strong emphasis on brand-building activities.
+- Online marketing and SEM together account for a significant portion of the budget, reflecting continued investment in performance-driven channels.
+- The overall allocation suggests a strategic balance between brand exposure and measurable acquisition efforts.
+
