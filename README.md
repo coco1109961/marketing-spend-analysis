@@ -64,7 +64,7 @@ This comparison provides insight into overall marketing priorities, highlighting
 ### Channel Budget Allocation
 The chart below illustrates the distribution of total marketing spend across channels after data validation.
 
-![Channel Budget Share](data/raw/图片 1.png)
+![Channel Budget Share](data/raw/channel_budget_share.png)
 
 
 ---
